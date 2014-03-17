@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" ng-app="todoApp">
+<html lang="en" >
 <head>
   <meta charset="utf-8">
   <title>AngularJs ToDo</title>
@@ -8,7 +8,7 @@
   <script src="resources/js/lib/angular.js"></script>
   <script src="resources/js/main.js"></script>
 </head>
-<body ng-controller="TodoCtrl">
+<body ng-app="todoApp" ng-controller="TodoCtrl">
 
   <ul id="todos">
     <li ng-repeat="todo in todos">
