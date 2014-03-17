@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en" ng-app="todoApp">
+<head>
+  <meta charset="utf-8">
+  <title>AngularJs ToDo</title>
+  <link rel="stylesheet" href="resources/css/main.css">
+
+  <script src="resources/js/lib/angular.js"></script>
+  <script src="resources/js/main.js"></script>
+</head>
+<body ng-controller="TodoCtrl">
+
+  <ul id="todos">
+    <li ng-repeat="todo in todos">
+      {{todo.description}}
+    </li>
+  </ul>
+
+
+</body>
+</html>
