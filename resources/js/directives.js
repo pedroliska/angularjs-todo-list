@@ -15,4 +15,19 @@ angular.module('todoApp').directive('valEmpty', function() {
     }
   };
 
+}).directive('myClick', function() {
+
+  return {
+    link: function(scope, element, attrs) {
+
+      element.on('click', function () {
+        scope.$parent.$apply(attrs.myClick);
+      });
+
+    },
+    scope: {
+
+    }
+  };
+
 });

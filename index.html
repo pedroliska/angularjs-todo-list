@@ -17,8 +17,8 @@
     <li ng-repeat="todo in todos" ng-class="{done: todo.done}">
       <input type="checkbox" ng-model="todo.done" />
       <span class="desc">{{todo.description}}</span> 
-      <span ng-click="deleteSingle(todo)"
-            ng-show="todo.done"
+      <span ng-show="todo.done"
+            my-click="deleteSingle(todo)"
             class="delete">&#x2718;</span>
     </li>
   </ul>
