@@ -24,3 +24,8 @@ li.done {
   color: #AAA;
   text-decoration: line-through;
 }
+
+.error {
+  border: 1px solid red;
+  background-color: #FFDCDC;
+}

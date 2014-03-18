@@ -6,7 +6,8 @@
   <link rel="stylesheet" href="resources/css/main.css">
 
   <script src="resources/js/lib/angular.js"></script>
-  <script src="resources/js/main.js"></script>
+  <script src="resources/js/controllers.js"></script>
+  <script src="resources/js/directives.js"></script>
 </head>
 <body ng-app="todoApp" ng-controller="TodoCtrl">
 
@@ -18,7 +19,8 @@
       {{todo.description}}
     </li>
   </ul>
-  <input type="text" ng-model="newTodoDesc"/>  
+
+  <input type="text" ng-model="newTodoDesc" val-empty="error" ng-keypress="keyEntered($event)" />  
   <button ng-click="addTodo(newTodoDesc)">Add todo item</button>
 
   <p>

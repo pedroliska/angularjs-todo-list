@@ -1,8 +1,5 @@
-
-var todoApp = angular.module('todoApp', []);
-
-todoApp.controller('TodoCtrl', function($scope){
-
+angular.module('todoApp', []).controller('TodoCtrl', function($scope) {
+  
   $scope.todos = [
     'gather camping gear from attic',
     'buy new bike tube',
@@ -21,6 +18,9 @@ todoApp.controller('TodoCtrl', function($scope){
   };
   $scope.hasDoneTodos = function() {
     return pendingTodos().length < $scope.todos.length;
+  };
+  $scope.keyEntered = function(event) {
+    // console.log(event)
   };
 
   function descToTodo(desc) {
