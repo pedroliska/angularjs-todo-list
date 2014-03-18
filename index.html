@@ -10,8 +10,10 @@
 </head>
 <body ng-app="todoApp" ng-controller="TodoCtrl">
 
+<h1>To-Do List</h1>
+
   <ul id="todos">
-    <li ng-repeat="todo in todos">
+    <li ng-repeat="todo in todos" ng-class="{done: todo.done}">
       <input type="checkbox" ng-model="todo.done" />
       {{todo.description}}
     </li>
