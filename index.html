@@ -16,10 +16,12 @@
       {{todo.description}}
     </li>
   </ul>
-  <input type="text" ng-model="newTodoDesc"/>  
-  <button text="as" ng-click="addTodo(newTodoDesc)">Add todo item</button>
+  <input type="text" item" ng-model="newTodoDesc"/>  
+  <button ng-click="addTodo(newTodoDesc)">Add todo item</button>
 
-  <button ng-click="deleteDone">Delete done items</button>
+  <p>
+    <a href="#" ng-click="deleteDone()">Delete completed items</a>
+  </p>
 
 </body>
 </html>

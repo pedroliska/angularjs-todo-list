@@ -2,6 +2,7 @@
 var todoApp = angular.module('todoApp', []);
 
 todoApp.controller('TodoCtrl', function($scope){
+
   $scope.todos = [
     'gather camping gear from attic',
     'buy new bike tube',
@@ -10,18 +11,18 @@ todoApp.controller('TodoCtrl', function($scope){
       return descToTodo(item);
     });
   $scope.todos[3].done = true;
+  $scope.newTodoDesc = 'new item';
+
+  $scope.deleteDone = function() {
+    $scope.todos = $scope.todos
+      .filter(function (item){ return !item.done; });
+  };
   $scope.addTodo = function(description) {
     $scope.todos.push(descToTodo(description));
-  };
-  $scope.deleteDone = function() {
-    var indecesToDelete = $scope.todos
-      .map(function(item, index){ 
-        return {'index': index, 'done':item.done}; 
-      })
-      .filter(function (item){ return done; });
   };
 
   function descToTodo(desc) {
     return {'description': desc, done: false};
   }
+
 });
