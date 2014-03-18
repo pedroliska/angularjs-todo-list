@@ -12,10 +12,14 @@
 
   <ul id="todos">
     <li ng-repeat="todo in todos">
+      <input type="checkbox" ng-model="todo.done" />
       {{todo.description}}
     </li>
   </ul>
+  <input type="text" ng-model="newTodoDesc"/>  
+  <button text="as" ng-click="addTodo(newTodoDesc)">Add todo item</button>
 
+  <button ng-click="deleteDone">Delete done items</button>
 
 </body>
 </html>
