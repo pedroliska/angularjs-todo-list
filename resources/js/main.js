@@ -19,7 +19,7 @@ todoApp.controller('TodoCtrl', function($scope){
   $scope.deleteDone = function() {
     $scope.todos = pendingTodos();
   };
-  $scope.hasCompletedTodos = function() {
+  $scope.hasDoneTodos = function() {
     return pendingTodos().length < $scope.todos.length;
   };
 

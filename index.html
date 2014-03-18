@@ -18,11 +18,11 @@
       {{todo.description}}
     </li>
   </ul>
-  <input type="text" item" ng-model="newTodoDesc"/>  
+  <input type="text" ng-model="newTodoDesc"/>  
   <button ng-click="addTodo(newTodoDesc)">Add todo item</button>
 
   <p>
-    <a href="#" ng-click="deleteDone()" style="{{hasCompletedTodos() ? '': 'visibility: hidden'}}">
+    <a href="#" ng-click="deleteDone()" style="{{hasDoneTodos() ? '': 'visibility: hidden'}}">
       Delete completed items
     </a>
   </p>
