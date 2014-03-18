@@ -1,5 +1,5 @@
 angular.module('todoApp', []).controller('TodoCtrl', function($scope) {
-  
+
   $scope.todos = [
     'gather camping gear from attic',
     'buy new bike tube',
@@ -13,14 +13,16 @@ angular.module('todoApp', []).controller('TodoCtrl', function($scope) {
   $scope.addTodo = function(description) {
     $scope.todos.push(descToTodo(description));
   };
+  $scope.deleteSingle = function(todo) {
+    $scope.todos = $scope.todos.filter(function (item) {
+      return item.description != todo.description;
+    });
+  };
   $scope.deleteDone = function() {
     $scope.todos = pendingTodos();
   };
   $scope.hasDoneTodos = function() {
     return pendingTodos().length < $scope.todos.length;
-  };
-  $scope.keyEntered = function(event) {
-    // console.log(event)
   };
 
   function descToTodo(desc) {

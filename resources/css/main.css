@@ -22,7 +22,12 @@ ul#todos {
 
 li.done {
   color: #AAA;
+}
+li.done span.desc {
   text-decoration: line-through;
+}
+li.done span.delete {
+  cursor: pointer;
 }
 
 .error {

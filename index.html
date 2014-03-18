@@ -16,17 +16,19 @@
   <ul id="todos">
     <li ng-repeat="todo in todos" ng-class="{done: todo.done}">
       <input type="checkbox" ng-model="todo.done" />
-      {{todo.description}}
+      <span class="desc">{{todo.description}}</span> 
+      <span ng-click="deleteSingle(todo)"
+            ng-show="todo.done"
+            class="delete">&#x2718;</span>
     </li>
   </ul>
 
-  <input type="text" 
-         ng-model="newTodoDesc" 
-         val-empty="error" 
-         ng-keypress="keyEntered($event)"
-         ng-trim="true" />  
+  <input type="text"
+         ng-model="newTodoDesc"
+         val-empty="error"
+         ng-trim="true" />
 
-  <button ng-click="addTodo(newTodoDesc)" 
+  <button ng-click="addTodo(newTodoDesc)"
           ng-disabled="!newTodoDesc">Add todo item</button>
 
   <p>
