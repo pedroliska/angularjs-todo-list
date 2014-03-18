@@ -22,7 +22,9 @@
   <button ng-click="addTodo(newTodoDesc)">Add todo item</button>
 
   <p>
-    <a href="#" ng-click="deleteDone()">Delete completed items</a>
+    <a href="#" ng-click="deleteDone()" style="{{hasCompletedTodos() ? '': 'visibility: hidden'}}">
+      Delete completed items
+    </a>
   </p>
 
 </body>

@@ -13,16 +13,21 @@ todoApp.controller('TodoCtrl', function($scope){
   $scope.todos[3].done = true;
   $scope.newTodoDesc = 'new item';
 
-  $scope.deleteDone = function() {
-    $scope.todos = $scope.todos
-      .filter(function (item){ return !item.done; });
-  };
   $scope.addTodo = function(description) {
     $scope.todos.push(descToTodo(description));
   };
+  $scope.deleteDone = function() {
+    $scope.todos = pendingTodos();
+  };
+  $scope.hasCompletedTodos = function() {
+    return pendingTodos().length < $scope.todos.length;
+  };
 
   function descToTodo(desc) {
-    return {'description': desc, done: false};
+    return {'description': desc, 'done': false};
+  }
+  function pendingTodos() {
+    return $scope.todos.filter(function (item) { return !item.done; });
   }
 
 });
