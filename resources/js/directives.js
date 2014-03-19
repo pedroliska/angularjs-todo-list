@@ -4,7 +4,8 @@ angular.module('todoApp').directive('valEmpty', function() {
     link: function (scope, element, attrs) {
       
       element.on('keyup', function() {
-        var cssClassName = element.attr('val-empty');
+        
+        var cssClassName = attrs.valEmpty;
         if (element.val().trim() === '')
            element.addClass(cssClassName);
         else 
@@ -21,11 +22,8 @@ angular.module('todoApp').directive('valEmpty', function() {
     link: function(scope, element, attrs) {
 
       element.on('click', function () {
-        scope.$parent.$apply(attrs.myClick);
+        scope.$apply(attrs.myClick);
       });
-
-    },
-    scope: {
 
     }
   };
